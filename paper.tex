@@ -1,0 +1,19 @@
+We are interested in what makes a Sudoku hard and how a SAT solver tackles the problem depending on a problems difficulty.
+
+Hypothesis:
+The number of decisions (variable guesses) a SAT solver needs to make correlates positively with human perceived difficulty.
+
+When a SAT solver is finding an assignment of variables in order to satisfy a formula it needs to make decisions. Every decision sets a variable to either true of false and both options might need to be explored. This decision splits the search tree in half and the more splitting required, the more options the SAT solver needs to consider. For the case of Sudoku, this can be considered as the SAT solver taking an educated guess on what number to place where. We expect that the more difficult the Sudoku puzzle is, the more advanced techniques are required to solve it, the more decisions the SAT solver needs to make.
+
+Experimental Setup:
+Dataset: http://www.websudoku.com/
+We will use dataset Y to gather prelabelled Sudokus and run SAT solver X against those problems. The dataset only contains proper Sudokus. We will then collect how often the SAT solver had to make a decision (guess) when solving the problem, this is our metric. Using prelabelled Sudokus is a requirement for us as we need to compare our metric to the human label. We expect to see the number of decisions/branching the SAT solver needs to make increase with human difficulty.
+We will start by using the minimal encoding and then extend the encoding to allow the SAT solver to use more advanced techniques and then we hope to see the number of decisions made by the SAT solver reduce.
+
+
+Hypothesis: state it, explain it, motivate/justify it (why is it interesting, what would we learn from testing it
+Experimental setup: describe it, motivate/justify it, discuss possible weaknesses or problems, how do you compensate for those. What dataset did you use, which metrics did you use, which variables did you vary, etc.
+Experimental results: describe your experimental findings, discuss if they are reliable etc.
+Interpretation: what do your experimental results say about your hypothesis, do they confirm or falsify your hypothesis, do they show any further interesting lessons
+Conclusion, summary, future work: summarise your work and conclusions, and suggest new tasks or questions that follow from your work.
+Note: this is only a suggested structure, based on what scientific papers look like. You are free to deviate if you wish. I would expect reports to be around 5pgs long, but this is only an indication. I won’t be counting pages, it’s the quality that counts.
